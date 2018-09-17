@@ -5,7 +5,7 @@
 
   Note.prototype.getNoteBody = function() {
     return this.body
-  }
+  };
 
   exports.Note = Note;
 })(this);

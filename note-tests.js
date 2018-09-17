@@ -1,22 +1,22 @@
-// note-tests.js
+(function(exports) {
+  function createNoteTest() {};
+    createNoteTest.prototype.test = function(note) {
+      console.log(note.body);
+      if (note.body !== 'hello') {
+        throw new Error('Note not stored correctly');
+      }
+      else console.log('I think it passed - createNoteTest')
+    }
+  exports.createNoteTest = createNoteTest;
+})(this);
 
 (function(exports) {
-  function createNoteTest() {
-    var note = new Note('hello');
-
-    if (note.body !== 'hello') {
-      throw new Error("Note not stored correctly");
-    }
-  };
-
-  createNoteTest();
-
-  function displayNoteTest() {
-    var note = new Note('hello');
+  function displayNoteTest() {};
+  displayNoteTest.prototype.test = function(note) {
     if (note.getNoteBody() !== 'hello') {
-      throw new Error("Note body not found");
+      throw new Error("Unable to display note body");
     }
-  };
-
-  displayNoteTest();
+    else console.log('I think it passed -displayNoteTest')
+  }
+  exports.displayNoteTest = displayNoteTest;
 })(this);
