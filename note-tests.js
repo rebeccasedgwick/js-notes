@@ -10,4 +10,13 @@
   };
 
   createNoteTest();
+
+  function displayNoteTest() {
+    var note = new Note('hello');
+    if (note.getNoteBody() !== 'hello') {
+      throw new Error("Note body not found");
+    }
+  };
+
+  displayNoteTest();
 })(this);
